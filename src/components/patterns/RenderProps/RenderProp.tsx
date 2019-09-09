@@ -43,6 +43,10 @@ const ExamplePresentationComponent: FC<any> = (props) => {
                 */}
             <RenderPropAsChild 
                 render={
+                    // One of the benefits of render props is that you can see easily which properties you have access to and you know exactly where they're coming from. One of the major issues
+                    // with more typical higher order components is that you can't tell exactly where the properties your component is recieving have come from. This can make code clean up
+                    // removing redundant code difficult. However, the more render props you use the more likely you can find yourself in 'pyramid hell'; a scenario where you have so many 
+                    // properties being passed to you by render props that if you try to alter your render prop or remove it from the component, it breaks all of the code inside of it. 
                     ({ values, errors, touchedField } /* statePassedFromRenderAsChild */) => (
                         <>
                             <input name='userName' value={values['userName']} className={!!errors['userName'] ? 'error' : ''} />
