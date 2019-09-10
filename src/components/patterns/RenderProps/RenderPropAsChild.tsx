@@ -37,7 +37,7 @@ const ExamplePresentationComponent: FC<any> = (props) => {
         <form>
             <RenderPropAsChild>
                 {
-                    // The values have been passed down from RenderPropAsChild
+                    // The values have been passed down from RenderPropAsChild.
                     ({ values, errors, touchedField } /* statePassedFromRenderAsChild */) => (
                         <>
                             <input name='userName' value={values['userName']} className={!!errors['userName'] ? 'error' : ''} />
